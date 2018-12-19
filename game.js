@@ -1,13 +1,12 @@
 
 function setup() {
-	canvasWidth = windowWidth;
-	canvasHeight = 300;
-	createCanvas(canvasWidth, canvasHeight);
-	setFrameRate(initialFps)
-	f.createRandomFood();
+    canvasWidth = windowWidth; canvasHeight = 300;
+    createCanvas(canvasWidth, canvasHeight);
+    setFrameRate(initialFps);
+    f.createRandomFood();
 }
 function draw() {
-	background(51)
+    background(51);
 	f.draw();
 	s.update();
 	s.draw();
@@ -35,10 +34,7 @@ function keyPressed() {
 }
 class Food {
 	constructor() {
-		this.x = 0;
-		this.y = 0;
-		this.w = 20;
-		this.h = 20;
+		this.x = 0; this.y = 0; this.w = 20; this.h = 20;
 	}
 	createRandomFood() {
 		this.x = random(canvasWidth); this.y = random(canvasHeight);
