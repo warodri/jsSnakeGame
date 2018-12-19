@@ -6,7 +6,6 @@ function setup() {
 	setFrameRate(initialFps)
 	f.createRandomFood();
 }
-
 function draw() {
 	background(51)
 	f.draw();
@@ -28,14 +27,12 @@ function draw() {
 		}
 	}
 }
-
 function keyPressed() {
 	if (keyCode === UP_ARROW) s.move(0, -1);
 	if (keyCode === DOWN_ARROW) s.move(0, 1);
 	if (keyCode === RIGHT_ARROW) s.move(1, 0);
 	if (keyCode === LEFT_ARROW) s.move(-1, 0);
 }
-
 class Food {
 	constructor() {
 		this.x = 0;
@@ -55,7 +52,6 @@ class Food {
 	getX() { return this.x; }
 	getY() { return this.y; }
 }
-
 class Snake {
 	constructor() {
 		this.x = 0; this.y = 0; this.w = 20; this.h = 20;
@@ -100,26 +96,20 @@ class Snake {
 		return false;
 	}
 }
-
-
 function isDeadth() {
 	let x = s.getHeadPos().x; let y = s.getHeadPos().y;
 	if (x < 0 || x > canvasWidth || y < 0 || y > canvasHeight) return true;
 	return false;
 }
-
 function eaten() {
 	let snakeX = s.getHeadPos().x; let snakeY = s.getHeadPos().y;
 	let d = dist(snakeX ,snakeY, f.getX(), f.getY());
 	return d < 20;
 }
-
-
 var canvasWidth;
 var canvasHeight;
 var initialFps = 5;
 var fps = initialFps;
 var totalEatens = 0;
-
 var f = new Food();
 var s = new Snake();
